@@ -90,8 +90,8 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <div class="d-sm-flex align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Kriteria</h6>
-                            <a href="tambah_data_kriteria.php" style="text-decoration: none; list-style: none;"><input type="button" class="btn btn-primary btn-user" name="adddata" value="Tambah Data"></a>
+                            <h6 class="m-0 font-weight-bold text-primary">Data Subkriteria</h6>
+                            <a href="tambah_data_subkriteria.php" style="text-decoration: none; list-style: none;"><input type="button" class="btn btn-primary btn-user" name="adddata" value="Tambah Data"></a>
                               <!-- <a href="export_excel.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 
@@ -102,9 +102,9 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Nama</th>
-                                            <th>Simbol</th>
-                                            <!-- <th>Subkriteria</th> -->
+                                            <th>Kriteria</th>
+                                            <th>Nama Subkriteria</th>
+                                            <th>Bobot</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -115,25 +115,24 @@
                                         <?php
 
                                         // $nomor = 1;
-                                         $get_data = mysqli_query($conn, "select * from kriteria");
+                                         $get_data = mysqli_query($conn, "select * from subkriteria RIGHT JOIN kriteria on kriteria.id = subkriteria.kriteria_id");
 
                                          while ($display=mysqli_fetch_array($get_data)) {
                                                 // code...
                                                 $id_data = $display['id'];
-                                                $simbol = $display['simbol'];
-                                                $nama = $display['nama'];
-                                             
-                                                
-                                               
-                                   
+                                                $id_sub = $display['id_sub'];
+                                                $kriteria_id = $display['nama'];
+                                                $nama = $display['namasub'];
+                                                $bobot = $display['bobot'];
                                         ?>
                                         <tr>
+                                            <td><?php echo $kriteria_id ?></td>
                                             <td><?php echo $nama ?></td>
-                                            <td><?php echo $simbol ?></td>
+                                            <td><?php echo $bobot ?></td>
                                            
                                             <td> 
-                                                <a href='edit_data_kriteria.php?GetID=<?php echo $id_data ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Edit' id='editbtn' class="btn btn-primary btn-user" ></a>
-                                                <a href='delete_data_kriteria.php?Del=<?php echo $id_data ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Delete' id='delbtn' class="btn btn-primary btn-user" ></a>
+                                                <a href='edit_data_subkriteria.php?GetID=<?php echo $id_sub ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Edit' id='editbtn' class="btn btn-primary btn-user" ></a>
+                                                <a href='delete_data_subkriteria.php?Del=<?php echo $id_sub ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Delete' id='delbtn' class="btn btn-primary btn-user" ></a>
                                             </td>
                                          
                                         </tr>

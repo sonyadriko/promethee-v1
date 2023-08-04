@@ -90,7 +90,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <div class="d-sm-flex align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Kriteria</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Data Alternatif</h6>
                             <a href="tambah_data_kriteria.php" style="text-decoration: none; list-style: none;"><input type="button" class="btn btn-primary btn-user" name="adddata" value="Tambah Data"></a>
                               <!-- <a href="export_excel.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
@@ -102,9 +102,13 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>Kode</th>
+                                            <th>NISN</th>
+                                            <th>Kelas</th>
                                             <th>Nama</th>
-                                            <th>Simbol</th>
-                                            <!-- <th>Subkriteria</th> -->
+                                            <th>Tanggal Lahir</th>
+                                            <th>Tempat Lahir</th>
+                                            <th>Nama Ibu</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -115,24 +119,34 @@
                                         <?php
 
                                         // $nomor = 1;
-                                         $get_data = mysqli_query($conn, "select * from kriteria");
+                                         $get_data = mysqli_query($conn, "select * from siswa");
 
                                          while ($display=mysqli_fetch_array($get_data)) {
                                                 // code...
                                                 $id_data = $display['id'];
-                                                $simbol = $display['simbol'];
+                                                $kode = $display['kode'];
+                                                $nisn = $display['nisn'];
+                                                $kelas = $display['kelas'];
                                                 $nama = $display['nama'];
+                                                $tgllahir = $display['tanggal_lahir'];
+                                                $tmptlahir = $display['tempat_lahir'];
+                                                $nama_ibu = $display['nama_ibu'];
                                              
                                                 
                                                
                                    
                                         ?>
                                         <tr>
+                                            <td><?php echo $kode ?></td>
+                                            <td><?php echo $nisn ?></td>
+                                            <td><?php echo $kelas ?></td>
                                             <td><?php echo $nama ?></td>
-                                            <td><?php echo $simbol ?></td>
+                                            <td><?php echo $tgllahir ?></td>
+                                            <td><?php echo $tmptlahir ?></td>
+                                            <td><?php echo $nama_ibu ?></td>
                                            
                                             <td> 
-                                                <a href='edit_data_kriteria.php?GetID=<?php echo $id_data ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Edit' id='editbtn' class="btn btn-primary btn-user" ></a>
+                                                <a href='edit_data_training.php?GetID=<?php echo $id_data ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Edit' id='editbtn' class="btn btn-primary btn-user" ></a>
                                                 <a href='delete_data_kriteria.php?Del=<?php echo $id_data ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Delete' id='delbtn' class="btn btn-primary btn-user" ></a>
                                             </td>
                                          

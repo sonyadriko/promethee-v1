@@ -41,19 +41,19 @@
 
 <!-- Nav Item - Tables -->
 <li class="nav-item">
-    <a class="nav-link" href="atribut.php">
+    <a class="nav-link" href="data_subkriteria.php">
         <i class="fas fa-fw fa-table"></i>
         <span>Data Subkriteria</span></a>
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="data_testing.php">
+    <a class="nav-link" href="data_alternatif.php">
         <i class="fas fa-fw fa-table"></i>
         <span>Data Alternatif</span></a>
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="hitung.php">
+    <a class="nav-link" href="data_penilaian.php">
         <i class="fas fa-fw fa-table"></i>
         <span>Data Penilaian</span></a>
 </li>
