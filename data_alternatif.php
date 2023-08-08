@@ -91,7 +91,7 @@
                         <div class="card-header py-3">
                             <div class="d-sm-flex align-items-center justify-content-between">
                             <h6 class="m-0 font-weight-bold text-primary">Data Alternatif</h6>
-                            <a href="tambah_data_kriteria.php" style="text-decoration: none; list-style: none;"><input type="button" class="btn btn-primary btn-user" name="adddata" value="Tambah Data"></a>
+                            <a href="tambah_data_alternatif.php" style="text-decoration: none; list-style: none;"><input type="button" class="btn btn-primary btn-user" name="adddata" value="Tambah Data"></a>
                               <!-- <a href="export_excel.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 
@@ -147,7 +147,7 @@
                                            
                                             <td> 
                                                 <a href='edit_data_training.php?GetID=<?php echo $id_data ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Edit' id='editbtn' class="btn btn-primary btn-user" ></a>
-                                                <a href='delete_data_kriteria.php?Del=<?php echo $id_data ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Delete' id='delbtn' class="btn btn-primary btn-user" ></a>
+                                                <a href='delete_data_alternatif.php?Del=<?php echo $id_data ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Delete' id='delbtn' class="btn btn-primary btn-user" ></a>
                                             </td>
                                          
                                         </tr>
