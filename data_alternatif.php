@@ -146,7 +146,7 @@
                                             <td><?php echo $nama_ibu ?></td>
                                            
                                             <td> 
-                                                <a href='edit_data_training.php?GetID=<?php echo $id_data ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Edit' id='editbtn' class="btn btn-primary btn-user" ></a>
+                                                <a href='edit_data_alternatif.php?GetID=<?php echo $id_data ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Edit' id='editbtn' class="btn btn-primary btn-user" ></a>
                                                 <a href='delete_data_alternatif.php?Del=<?php echo $id_data ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Delete' id='delbtn' class="btn btn-primary btn-user" ></a>
                                             </td>
                                          
